@@ -1,2 +1,5 @@
-[platform]
-name = "static-sites"
+# oryx.toml
+language = "nodejs"
+platform = "nodejs"
+build_command = "npm install
+start_command = "node app.js"
