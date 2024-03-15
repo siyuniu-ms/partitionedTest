@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 
+
 app.get('/', (req, res) => {
     // Set a cookie directly
     res.cookie('myCookie', 'myValue', {
