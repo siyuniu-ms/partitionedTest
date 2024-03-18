@@ -30,6 +30,6 @@ app.post('/', (req, res) => {
     });
     res.send('Cookie set!');
   });
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
