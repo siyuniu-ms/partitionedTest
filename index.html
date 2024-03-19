@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Iframe Example</title>
+</head>
+<body>
+    <h1>Dynamic Iframe Example</h1>
+    
+    <script>
+        // Create a new iframe element
+        const frame = document.createElement("iframe");
+
+        // Set the source URL for the iframe
+        frame.src = "https://parttest.azurewebsites.net/";
+
+        // Append the iframe to the body of the document
+        document.body.appendChild(frame);
+    </script>
+<p>Partitioned Cookie send </p>
+<script>
+    // Send a fetch request to the specified URL
+    // Send a POST request to the specified URL
+    fetch('https://parttest.azurewebsites.net/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include', // Attach cookies
+            body: JSON.stringify({ "siyutest": 'siyuvalue' }) // Replace with your JSON data
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log("received data", data);
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
+</script>
+</body>
+</html>
